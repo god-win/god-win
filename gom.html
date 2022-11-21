@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+h1{
+  text-align: center;
+  color: #fd4766;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+
+.column {
+  -ms-flex: 50%; 
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+</head>
+<body>
+<div class="header" id="myHeader">
+  <h1>MY FRIENDS</h1>
+  <p>In College</p>
+  <button class="btn" onclick="im()">click to collage</button>
+</div>
+<div class="row"> 
+  <div class="column">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.29 PM (1).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.29 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.30 PM (1).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.02.48 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.31 PM (1).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.32 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.33 PM.jpeg" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.34 PM (1).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.34 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.38 PM (1).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.38 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.46 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.47 PM.jpeg" style="width:100%">
+  </div>  
+  <div class="column">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.48 PM (1).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.48 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.49 PM (1).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.01.49 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.02.40 PM (1).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.02.43 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.02.44 PM (1).jpeg" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.02.44 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.02.49 PM (2).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.02.50 PM (2).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.02.50 PM.jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.02.51 PM (1).jpeg" style="width:100%">
+    <img src="static/WhatsApp Image 2022-11-06 at 4.02.48 PM (1).jpeg" style="width:100%">
+  </div>
+</div>
+
+<script>
+var elements = document.getElementsByClassName("column");
+var i;
+function im() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  
+    elements[i].style.flex = "25%";
+  }
+}
+var header = document.getElementById("myHeader");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
